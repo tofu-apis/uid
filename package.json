@@ -1,6 +1,6 @@
 {
   "name": "@tofu-apis/uid",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "main": "dist/index.js",
   "module": "src/index.ts",
