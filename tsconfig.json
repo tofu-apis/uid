@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "locale": "en",
+    "lib": ["ES2020.Promise"],
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    // Relying on lint to handle to allow _ prefix for unused functions exception
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "outDir": "dist",
+    // Skipping lib check since some libraries (lodash) don't compile properly
+    "skipLibCheck": true,
+    "strict": true,
+    "sourceMap": true,
+    "target": "es5",
+    "useDefineForClassFields": true,
+    "noErrorTruncation": true,
+    /* Experimental Options */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true
+  },
+  "compileOnSave": true,
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "test/**/*.test.ts"]
+}

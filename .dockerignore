@@ -1,0 +1,17 @@
+# Ignore git specific files
+.gitignore
+.git
+.githooks
+.github
+
+# Ignore built dependencies
+node_modules
+
+# Ignore built source code
+dist
+
+# Ignore documentation files
+README.md
+
+# Ignore orchestration files beyond Docker scope
+Makefile

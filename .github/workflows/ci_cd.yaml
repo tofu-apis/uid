@@ -1,0 +1,73 @@
+# Basic workflow for Github Actions
+name: CI
+
+# Triggers the workflow on push or pull request events but only for the main branch
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Execution of all pre-commit checks/tests for the remote repository
+  tests:
+    name: Run build & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get current docker(-compose) versions
+        run: docker --version && docker-compose --version
+      - name: Run build
+        run: make dckr-build
+      - name: Run lint
+        run: make dckr-build-linter
+      - name: Run the unit tests
+        run: make dckr-build-test-unit
+
+  # Revert commit (only should run on failure of some phase in a CI/CD pipeline)
+  auto-revert-commit:
+    needs: tests
+    runs-on: ubuntu-latest
+    if: always() && (needs.tests.result == 'failure')
+    steps:
+      - name: Automatic Commit Revert
+        uses: 'tofu-apis/revert-commit-action@v0.0.37'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          is-push-enabled: 'true'
+
+  # Automatic version bumping of the patch version by default
+  # This should execute only if the tests job passes
+  automatic-version-bump:
+    needs: tests
+    runs-on: ubuntu-latest
+    outputs:
+      latest-git-tag: ${{ steps.set-latest-git-tag-output.outputs.latest-git-tag }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Announce auto version bump
+        run: echo "Commencing automatic version bump given checks/tests succeeded!"
+      - name: 'Bump the package.json version on successful test execution'
+        id: automatic-version-bump
+        continue-on-error: true
+        uses: 'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # Set the expected strings for automatic version bump (only major/minor explicitly define)
+        with:
+          minor-wording: 'minor version bump'
+          major-wording: 'major version bump'
+          # Handling patch-wording as optional to pick up automatic default patch bump
+          target-branch: 'main'
+          # Note: workflow will get skipped for automatic version bump
+          commit-message: 'CI: Automatic version bump to {{version}}'
+      - name: Output Post-bump version (for temporary debugging)
+        if: ${{ steps.automatic-version-bump.outcome == 'success' && steps.automatic-version-bump.outputs.newTag != '' }}
+        run: cat package.json
+      - name: Set output variable with the tag that was just created
+        id: set-latest-git-tag-output
+        if: ${{ steps.automatic-version-bump.outcome == 'success' && steps.automatic-version-bump.outputs.newTag != '' }}
+        run: echo "::set-output name=latest-git-tag::$(git describe --tags $(git rev-list --tags --max-count=1))"
+      - name: ${{ steps.automatic-version-bump.outcome == 'failure' }}
+        run: echo "Unable to make version bump commit - allowing job to succeed. This could be due to another commit being committed before the version bump commit was able to be committed."

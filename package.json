@@ -1,0 +1,51 @@
+{
+  "name": "~~__node-lib_template__~~",
+  "version": "0.0.4",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "src/index.ts",
+  "jsnext:main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "concurrently \"yarn run tsc:watch\"",
+    "tsc:watch": "tsc --watch",
+    "format": "prettier --write src test",
+    "format:check": "prettier --check src test",
+    "format:watch": "onchange \"src/**/*\" \"test/**/*\" -- prettier --write {{changed}}",
+    "lint": "eslint --max-warnings=0 src/ --ext .ts,.tsx",
+    "lint-fix": "yarn run lint --fix",
+    "lint:watch": "onchange \"src/**/*\" -- eslint --max-warnings=0 src/ --ext .ts,.tsx",
+    "lint-fix:watch": "onchange \"src/**/*\" -- yarn run lint-fix",
+    "test:unit": "jest . --config jestconfig.json --silent --detectOpenHandles",
+    "test:unit:watch": "onchange \"src/**/*\" \"test/**/*\" -- yarn run test:unit",
+    "prepare": "yarn run build"
+  },
+  "engines": {
+    "node": "16.19.1",
+    "yarn": "1.22.10"
+  },
+  "devDependencies": {
+    "@jest/globals": "29.4.2",
+    "@types/jest": "29.4.0",
+    "@types/node": "18.15.11",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
+    "concurrently": "8.0.1",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "jest": "29.4.2",
+    "onchange": "7.1.0",
+    "prettier": "2.3.2",
+    "prettier-plugin-organize-imports": "2.3.3",
+    "ts-jest": "29.0.5",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "lodash": "4.17.21",
+    "yup": "0.32.9"
+  },
+  "repository": "git@github.com:tofu-apis/node-lib_template.git",
+  "license": "MIT"
+}

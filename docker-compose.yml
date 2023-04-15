@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    read_only: true
+    user: node
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+      args:
+        DOCKER_BUILDKIT: 1
+    init: true
