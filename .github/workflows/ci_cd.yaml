@@ -80,9 +80,14 @@ jobs:
       - uses: actions/checkout@v2
       - id: get-node-version
         run: echo "::set-output name=node-version::$(jq -r .engines.node package.json)"
-      - uses: actions/setup-node@v3
+      - name: Install node
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ steps.get-node-version.outputs.node-version }}
+      - id: get-yarn-version
+        run: echo "::set-output name=yarn-version::$(jq -r .engines.yarn package.json)"
+      - name: Install yarn
+        run: npm install -g yarn${{ steps.get-yarn-version.outputs.yarn-version }}
       - id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
