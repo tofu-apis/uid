@@ -88,6 +88,8 @@ jobs:
         run: echo "::set-output name=yarn-version::$(jq -r .engines.yarn package.json)"
       - name: Install yarn
         run: npm install -g yarn@${{ steps.get-yarn-version.outputs.yarn-version }}
+      - name: yarn run build
+        run: yarn run build
       - id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
