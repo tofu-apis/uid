@@ -5,6 +5,10 @@
   "module": "src/index.ts",
   "jsnext:main": "src/index.ts",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc",
     "build:watch": "concurrently \"yarn run tsc:watch\"",
