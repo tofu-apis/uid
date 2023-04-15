@@ -19,7 +19,7 @@
     "lint-fix:watch": "onchange \"src/**/*\" -- yarn run lint-fix",
     "test:unit": "jest . --config jestconfig.json --silent --detectOpenHandles",
     "test:unit:watch": "onchange \"src/**/*\" \"test/**/*\" -- yarn run test:unit",
-    "prepare": "yarn run build"
+    "prepublishOnly": "yarn run build"
   },
   "engines": {
     "node": "16.19.1",
