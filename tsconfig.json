@@ -4,7 +4,7 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "locale": "en",
-    "lib": ["ES2020.Promise"],
+    "lib": ["ES2015", "ES2020.Promise"],
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     // Relying on lint to handle to allow _ prefix for unused functions exception
@@ -16,8 +16,6 @@
     "strict": true,
     "sourceMap": true,
     "target": "es5",
-    "typeRoots": ["./node_modules/@types"],
-    "types": ["node"],
     "useDefineForClassFields": true,
     "noErrorTruncation": true,
     /* Experimental Options */
