@@ -1,9 +1,3 @@
-export type OneObject = {
-  value: 1;
-};
-
-export function getOne(): OneObject {
-  return {
-    value: 1,
-  };
-}
+export * from './cast';
+export * from './validate';
+export * from './component';

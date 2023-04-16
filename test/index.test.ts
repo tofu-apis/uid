@@ -1,6 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { getOne } from '../src/index';
 
 test('Dummy Test - Equality', () => {
-  expect(getOne().value).toEqual(1);
+  expect(1).toEqual(1);
 });

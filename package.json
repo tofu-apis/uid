@@ -46,6 +46,7 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
+    "@tofu-apis/common-types": "0.0.3",
     "lodash": "4.17.21",
     "yup": "0.32.9"
   },
