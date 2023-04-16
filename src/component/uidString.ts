@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { NonEmptyArray, castToNonEmptyArray } from '@tofu-apis/common-types';
-import { NonEmptyString, castToNonEmptyString } from '@tofu-apis/common-types';
+import { NonEmptyArray, castToNonEmptyString } from '@tofu-apis/common-types';
+import { NonEmptyString, requireArrayNonEmpty } from '@tofu-apis/common-types';
 import { checkArgument } from '@tofu-apis/common-types';
 import { Split } from '@tofu-apis/common-types';
 
@@ -88,7 +88,7 @@ function splitUidComponentStrings(
   );
   uidComponentStrings.push(currentUidComponent);
 
-  return castToNonEmptyArray(uidComponentStrings);
+  return requireArrayNonEmpty(uidComponentStrings);
 }
 
 export function extractUid(uidString: UidString): ExtractUid<UidString> {
@@ -105,9 +105,8 @@ export function extractUid(uidString: UidString): ExtractUid<UidString> {
   const [_unusedFullUidString, domainPath, fullUidComponentsString] =
     regexMatchResult;
 
-  const domainPathElements: NonEmptyArray<NonEmptyString> = castToNonEmptyArray(
-    _.split(domainPath, ':'),
-  );
+  const domainPathElements: NonEmptyArray<NonEmptyString> =
+    requireArrayNonEmpty(_.split(domainPath, ':'));
 
   const uidComponentStrings: NonEmptyArray<NonEmptyString> =
     splitUidComponentStrings(fullUidComponentsString);
