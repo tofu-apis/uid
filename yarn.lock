@@ -648,11 +648,10 @@
     "@sinonjs/commons" "^2.0.0"
 
 "@tofu-apis/common-types@*":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@tofu-apis/common-types/-/common-types-0.0.4.tgz#ac849a0923250c96ba53bd29a302f6e07d40a8e8"
-  integrity sha512-7vGtON255TNUvo4OcgypAwDPZIUraEsTQ2VswtVp6MRvZJOJnz7p+zsOFq7uz89n8uz5a3PlHKdlktQh/fCrdQ==
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@tofu-apis/common-types/-/common-types-0.0.5.tgz#83870b3cc332656f39485563dd62d4436e89c96b"
+  integrity sha512-WfSGVfKMXa5J1jkSTMLyTehifAeTYiUqmT7H9y91QCVe935dEtvcFzUa31nS2oMaAczQ9Nhqiy/uG9XN66+R/Q==
   dependencies:
-    "@types/lodash" "4.14.194"
     lodash "4.17.21"
     yup "0.32.9"
 
