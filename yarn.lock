@@ -647,11 +647,12 @@
   dependencies:
     "@sinonjs/commons" "^2.0.0"
 
-"@tofu-apis/common-types@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@tofu-apis/common-types/-/common-types-0.0.3.tgz#a9fb725564ca1a9c2244ca06cdfcf49627194c5a"
-  integrity sha512-e2XtJW6vjxBF8Koo9WH2hp9L6KTIIMpLQGJ+tZueuayCzc2sfpmVdYzHN4fPGSww9/N2cfJPwmxGduTj1SA8gg==
+"@tofu-apis/common-types@*":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@tofu-apis/common-types/-/common-types-0.0.4.tgz#ac849a0923250c96ba53bd29a302f6e07d40a8e8"
+  integrity sha512-7vGtON255TNUvo4OcgypAwDPZIUraEsTQ2VswtVp6MRvZJOJnz7p+zsOFq7uz89n8uz5a3PlHKdlktQh/fCrdQ==
   dependencies:
+    "@types/lodash" "4.14.194"
     lodash "4.17.21"
     yup "0.32.9"
 
@@ -726,6 +727,11 @@
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
+
+"@types/lodash@4.14.194":
+  version "4.14.194"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.194.tgz#b71eb6f7a0ff11bff59fc987134a093029258a76"
+  integrity sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==
 
 "@types/lodash@^4.14.165":
   version "4.14.192"
