@@ -78,6 +78,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: 'main'
       - id: get-node-version
         run: echo "::set-output name=node-version::$(jq -r .engines.node package.json)"
       - name: Install node
