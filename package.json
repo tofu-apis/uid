@@ -1,6 +1,6 @@
 {
   "name": "@tofu-apis/uid",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "main": "dist/index.js",
   "module": "src/index.ts",
   "jsnext:main": "src/index.ts",
