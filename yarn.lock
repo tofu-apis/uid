@@ -647,7 +647,7 @@
   dependencies:
     "@sinonjs/commons" "^2.0.0"
 
-"@tofu-apis/common-types@^0.0.3":
+"@tofu-apis/common-types@0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@tofu-apis/common-types/-/common-types-0.0.3.tgz#a9fb725564ca1a9c2244ca06cdfcf49627194c5a"
   integrity sha512-e2XtJW6vjxBF8Koo9WH2hp9L6KTIIMpLQGJ+tZueuayCzc2sfpmVdYzHN4fPGSww9/N2cfJPwmxGduTj1SA8gg==
