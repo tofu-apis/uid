@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "@tofu-apis/common-types": "*",
+    "@types/lodash": "4.14.194",
     "lodash": "4.17.21",
     "yup": "0.32.9"
   },
