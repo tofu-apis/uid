@@ -667,7 +667,7 @@
     lodash "4.17.21"
     yup "0.32.9"
 
-"@tofu-apis/eslint-config-ts-base@1.0.2":
+"@tofu-apis/eslint-config-ts-base@*":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@tofu-apis/eslint-config-ts-base/-/eslint-config-ts-base-1.0.2.tgz#687b24f9faa3ef33e8d6c915bfaf780807b5b521"
   integrity sha512-5iC0jG/AXIAV6M9yFplUGujdZ1oqaY3KqAIy+1cnvqyvb8pA9y+yYjRIY0ZE5dBxT706c0sRqReFWr8AGhwggQ==
