@@ -1,8 +1,12 @@
 import _ from 'lodash';
-import { NonEmptyArray, castToNonEmptyString } from '@tofu-apis/common-types';
-import { NonEmptyString, requireArrayNonEmpty } from '@tofu-apis/common-types';
-import { checkArgument } from '@tofu-apis/common-types';
-import { Split } from '@tofu-apis/common-types';
+import {
+  NonEmptyArray,
+  castToNonEmptyString,
+  NonEmptyString,
+  requireArrayNonEmpty,
+  checkArgument,
+  Split,
+} from '@tofu-apis/common-types';
 
 /*
   We attempt to keep this simple for performance reasons (worth future consideration)

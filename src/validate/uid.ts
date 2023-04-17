@@ -1,7 +1,9 @@
 import _ from 'lodash';
-import { NonEmptyArray } from '@tofu-apis/common-types';
-import { NonEmptyString } from '@tofu-apis/common-types';
-import { checkArgument } from '@tofu-apis/common-types';
+import {
+  NonEmptyArray,
+  NonEmptyString,
+  checkArgument,
+} from '@tofu-apis/common-types';
 import { ExtractUid, UidString } from '../component/uidString';
 
 export function validateExtractedUid(

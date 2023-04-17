@@ -1,8 +1,7 @@
-import { Int } from '@tofu-apis/common-types';
-import { NonEmptyString } from '@tofu-apis/common-types';
+import { Int, NonEmptyString } from '@tofu-apis/common-types';
 import { BaseUid } from './baseUid';
 
-export type UidComponentType = NonEmptyString | Int | BaseUid;
+export type UidComponentType = BaseUid | Int | NonEmptyString;
 
 export interface UidComponent {
   toString(): string;

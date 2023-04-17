@@ -1,9 +1,12 @@
 import _ from 'lodash';
-import { Class } from '@tofu-apis/common-types';
-import { NonEmptyArray } from '@tofu-apis/common-types';
-import { NonEmptyString } from '@tofu-apis/common-types';
-import { NonNegativeInt, castToNonNegativeInt } from '@tofu-apis/common-types';
-import { checkArgument } from '@tofu-apis/common-types';
+import {
+  Class,
+  NonEmptyArray,
+  NonEmptyString,
+  NonNegativeInt,
+  castToNonNegativeInt,
+  checkArgument,
+} from '@tofu-apis/common-types';
 import { UidComponent } from './uidComponent';
 
 export class BaseUid {
