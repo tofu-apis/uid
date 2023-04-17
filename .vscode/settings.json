@@ -1,3 +1,4 @@
 {
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.suggest.completeFunctionCalls": true
 }
