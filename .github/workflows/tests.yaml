@@ -1,0 +1,21 @@
+name: tests
+
+on:
+  workflow_call:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Execution of all pre-commit checks/tests for the remote repository
+  tests:
+    name: Run build & tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get current docker(-compose) versions
+        run: docker --version && docker-compose --version
+      - name: Run build
+        run: make dckr-build
+      - name: Run lint
+        run: make dckr-build-linter
+      - name: Run the unit tests
+        run: make dckr-build-test-unit
