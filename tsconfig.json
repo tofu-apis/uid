@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": false,
     "declaration": true,
+    "downlevelIteration": true,
     "forceConsistentCasingInFileNames": true,
     "locale": "en",
     "lib": ["ES2015", "ES2020.Promise"],
