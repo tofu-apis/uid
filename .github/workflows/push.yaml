@@ -28,7 +28,7 @@ jobs:
     outputs:
       latest-git-tag: ${{ steps.set-latest-git-tag-output.outputs.latest-git-tag }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Announce auto version bump
         run: echo "Commencing automatic version bump given checks/tests succeeded!"
       - name: 'Bump the package.json version on successful test execution'
@@ -62,7 +62,7 @@ jobs:
     # Can be removed when we want npm-publish to always succeed
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: 'main'
       - id: get-node-version
